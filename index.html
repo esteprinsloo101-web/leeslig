@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="af">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LeesLig — Afrikaans Leespraktyk (Gr 1–7) | SA</title>
+  <meta name="description" content="Kalm, fokusvriendelike Afrikaans leespraktyk vir Suid-Afrikaanse kinders Gr 1–7. Kort sessies. Versterking onder ouer/voog — nie CAPS, nie ADHD-behandeling." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <div class="logo">Lees<span>Lig</span></div>
+      <p class="tagline">Kalm Afrikaans leespraktyk · Gr 1–7 · Kort sessies</p>
+    </header>
+
+    <div class="disclaimer-bar" role="note">
+      Praktyk &amp; versterking onder ouer/voog · Nie CAPS-gesertifiseer · Nie DBE · Nie skoolvervanging ·
+      ADHD-vriendelike <em>ontwerp</em> (kort tydhouers, een taak) — nie ADHD-diagnose of -behandeling nie · Min data (POPIA)
+    </div>
+
+    <!-- HOME -->
+    <div id="home-view">
+      <section class="setup-card">
+        <h2 class="section-title">Kies graad</h2>
+        <div class="grade-picker" id="grade-picker" role="group" aria-label="Graad">
+          <button type="button" class="grade-btn active" data-grade="1">Gr 1</button>
+          <button type="button" class="grade-btn" data-grade="2">Gr 2</button>
+          <button type="button" class="grade-btn" data-grade="3">Gr 3</button>
+          <button type="button" class="grade-btn" data-grade="4">Gr 4</button>
+          <button type="button" class="grade-btn" data-grade="5">Gr 5</button>
+          <button type="button" class="grade-btn" data-grade="6">Gr 6</button>
+          <button type="button" class="grade-btn" data-grade="7">Gr 7</button>
+        </div>
+
+        <h2 class="section-title">Sessie-lengte</h2>
+        <div class="session-picker" id="session-picker" role="group" aria-label="Sessie">
+          <button type="button" class="session-btn active" data-mins="3">3 min</button>
+          <button type="button" class="session-btn" data-mins="5">5 min</button>
+          <button type="button" class="session-btn" data-mins="8">8 min</button>
+        </div>
+        <p class="hint">Kort sessies help fokus — stop wanneer die tydhouer lui. Geen druk.</p>
+
+        <div class="stars-bar">
+          <span>⭐ Sterre (hierdie toestel):</span>
+          <span class="count" id="star-count">0</span>
+        </div>
+      </section>
+
+      <h2 class="section-title">Kies ’n module</h2>
+      <div class="modules" id="modules">
+        <button type="button" class="mod-card sounds" data-module="sounds" id="mod-sounds">
+          <span class="emoji" aria-hidden="true">🔊</span>
+          <h3>Klanke</h3>
+          <p>Letterklanke (junior)</p>
+        </button>
+        <button type="button" class="mod-card words" data-module="words" id="mod-words">
+          <span class="emoji" aria-hidden="true">✏️</span>
+          <h3>Kort woorde</h3>
+          <p>Lees &amp; kies (junior)</p>
+        </button>
+        <button type="button" class="mod-card sentences" data-module="sentences" id="mod-sentences">
+          <span class="emoji" aria-hidden="true">📝</span>
+          <h3>Sinne</h3>
+          <p>Kort sinne + begrip</p>
+        </button>
+        <button type="button" class="mod-card passages" data-module="passages" id="mod-passages">
+          <span class="emoji" aria-hidden="true">📖</span>
+          <h3>Passasies</h3>
+          <p>Kort teks + vrae (senior)</p>
+        </button>
+      </div>
+
+      <div class="parent-row">
+        <button type="button" class="btn ghost" id="open-parent">🔐 Ouermodus</button>
+        <a class="btn ghost" href="tips.html">Ouertips</a>
+      </div>
+
+      <div class="cta-box">
+        <h2>Wil jy meer werkblaaie?</h2>
+        <p>Kry die LeesLig Afrikaans Leespraktyk-pakket — drukbare blaaie, ouergids, en ekstra DEMO-inhoud vir tuis. ~R99.</p>
+        <a class="btn" id="gumroad-cta" href="https://gumroad.com/l/PLACEHOLDER-leeslig" rel="noopener">Kry die pakket · R99</a>
+        <div class="nav-links">
+          <a href="pack/README.md">Wat is in die pakket?</a>
+          <a href="pack/DISCLAIMER.md">Vrywaring</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRACTICE -->
+    <div class="practice-view" id="practice-view" hidden>
+      <div class="practice-top">
+        <button type="button" class="back-btn" id="back-home">← Tuis</button>
+        <div class="timer-wrap" id="timer-wrap">
+          <span class="timer-label">Tydhouer</span>
+          <span class="timer" id="timer-display">3:00</span>
+          <button type="button" class="btn tiny secondary" id="timer-toggle">Pouse</button>
+        </div>
+      </div>
+      <div class="practice-card" id="practice-card">
+        <p class="module-label" id="module-label">Klanke</p>
+        <p class="prompt-hint" id="prompt-hint">Lees hardop of in jou kop</p>
+        <div class="prompt-area" id="prompt-area"></div>
+        <div class="choices" id="choices"></div>
+        <div class="feedback" id="feedback" aria-live="polite"></div>
+        <div class="controls">
+          <button type="button" class="btn secondary" id="next-item">Volgende</button>
+        </div>
+      </div>
+      <p class="session-note" id="session-note"></p>
+    </div>
+
+    <!-- PARENT GATE MODAL -->
+    <div class="modal" id="parent-modal" hidden>
+      <div class="modal-card" role="dialog" aria-labelledby="parent-title">
+        <h2 id="parent-title">Ouermodus</h2>
+        <p>Tik die antwoord om instellings oop te maak (kinders kan nie per ongeluk verander nie).</p>
+        <p class="gate-q">Hoeveel is <strong>3 + 4</strong>?</p>
+        <input type="number" id="parent-answer" inputmode="numeric" autocomplete="off" aria-label="Antwoord" />
+        <div class="modal-actions">
+          <button type="button" class="btn secondary" id="parent-cancel">Kanselleer</button>
+          <button type="button" class="btn" id="parent-unlock">Ontsluit</button>
+        </div>
+        <p class="gate-err" id="gate-err" hidden>Probeer weer.</p>
+      </div>
+    </div>
+
+    <!-- PARENT SETTINGS -->
+    <div class="modal" id="settings-modal" hidden>
+      <div class="modal-card" role="dialog" aria-labelledby="settings-title">
+        <h2 id="settings-title">Ouersinstellings</h2>
+        <label class="check-row">
+          <input type="checkbox" id="opt-timer" checked />
+          Wys sagte tydhouer
+        </label>
+        <label class="check-row">
+          <input type="checkbox" id="opt-sound" />
+          Sagte “goed so”-klank (opsioneel; stil by verstek)
+        </label>
+        <label class="check-row">
+          <input type="checkbox" id="opt-demo-badge" checked />
+          Wys DEMO-etiket op oefeninge
+        </label>
+        <button type="button" class="btn secondary block" id="reset-stars">Stel sterre terug (hierdie toestel)</button>
+        <p class="hint">Geen kinder-rekeninge. Sterre bly slegs op hierdie toestel (localStorage). Minimale data — POPIA-vriendelik.</p>
+        <div class="modal-actions">
+          <button type="button" class="btn" id="settings-close">Klaar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SESSION DONE -->
+    <div class="modal" id="done-modal" hidden>
+      <div class="modal-card" role="dialog" aria-labelledby="done-title">
+        <h2 id="done-title">Sessie klaar ⭐</h2>
+        <p id="done-msg">Goed gewerk. Kort en kalm is genoeg vir vandag.</p>
+        <div class="modal-actions">
+          <button type="button" class="btn" id="done-home">Terug tuis</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site">
+    <p><strong>Vrywaring:</strong> LeesLig bied opsionele Afrikaans leespraktyk en versterking vir Suid-Afrikaanse gesinne onder ouer/voog. Dit is nie CAPS-belyn of -gesertifiseer nie, nie deur die Departement van Basiese Onderwys goedgekeur nie, en nie ’n skool, naskool of geregistreerde tutoringsdiens nie. Dit vervang nie klaskameronderrig of amptelike assessering nie. Leeruitkomste word nie gewaarborg nie. LeesLig is <em>nie</em> ADHD-diagnose, -behandeling of terapie nie — die ontwerp is fokusvriendelik (kort sessies, een taak op ’n slag, kalm UI). Geen sosiale funksies. Sterre en voorkeure word slegs op hierdie toestel gestoor; minimale kinddata (POPIA). Die verkoper is nie aanspreeklik vir hoe jy die materiaal gebruik nie.</p>
+    <p style="margin-top:0.5rem;">Faceless handelsmerk · Tuispraktyk · Geen kinder-rekeninge.</p>
+  </footer>
+
+  <script src="js/content.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
