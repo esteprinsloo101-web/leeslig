@@ -4,8 +4,9 @@ CTA: YOUR_GUMROAD_URL (placeholder until product created)
 Owner action: **HOLD** — leave listing ready; create product after Gumroad reset · do not hit create limit  
 Product: LeesLig — Afrikaans Reading Practice Pack (Gr 1–7 enrichment)  
 Price: **R99** (band R99–R129 OK; default R99)  
+Web demo (free): https://esteprinsloo101-web.github.io/leeslig/  
 Pack zip: `/workspace/leeslig/LeesLig_Afrikaans_Reading_Practice_Pack.zip`  
-QA: draft ready · 2026-09-06 · Legal fence + ADHD-design-only wording  
+QA: adversarial PASS · rounds 3 · 2026-09-06 · by Quill (Legal fence + short-sessions/low-distraction wording)  
 Note: Free web practice (Gr 1–7) is separate; paid pack = printables + parent guide. Faceless · COI-safe.
 
 ---
@@ -25,8 +26,15 @@ Short, calm Afrikaans reading practice for home — ADHD-friendly design (not tr
 ## Price
 **R99**
 
+## Gumroad short field / Legal fence (near top + footer)
+```
+Afrikaans reading practice and enrichment only. Not CAPS-certified, not a school curriculum, and not a substitute for a teacher or official DBE materials. Not ADHD diagnosis, treatment, therapy, or clinical assessment — “ADHD-friendly” means short chunks / low-distraction layout only. Use under a parent/guardian. LeesLig / the seller is not an education authority, clinic, or HPCSA practice.
+```
+
 ## Description (paste)
 ```
+Afrikaans reading practice and enrichment only. Not CAPS-certified, not a school curriculum, and not a substitute for a teacher or official DBE materials. Not ADHD diagnosis, treatment, therapy, or clinical assessment — “ADHD-friendly” means short chunks / low-distraction layout only. Use under a parent/guardian. LeesLig / the seller is not an education authority, clinic, or HPCSA practice.
+
 Calm Afrikaans reading practice for South African homes — short sessions, one task at a time.
 
 LeesLig Afrikaans Reading Practice Pack gives parents and caregivers printable worksheets, a short-session parent guide, a stars habit chart, and DEMO practice items for Grades 1–7 enrichment (Gr 1–3 fuller samples; Gr 4–7 stubs to grow).
