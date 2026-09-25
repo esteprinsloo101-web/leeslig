@@ -68,3 +68,5 @@ Gumroad: paste from `GUMROAD_LISTING.md` · **HOLD create** if daily limit hit �
 ## Do not modify
 
 `little-angels/` · `steady-kit/` · `randradar/` · `first-minutes/`
+
+> **2026-09-25:** paid pack files (`pack/`, zip) removed from this public repo/site. Buyers get them via Gumroad only.
