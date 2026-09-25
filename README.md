@@ -4,7 +4,7 @@ Faceless South African **Afrikaans reading practice** product — free calm web 
 
 **Audience:** SA parents/caregivers · Grades 1–7  
 **Price:** R99 (Gumroad — create after daily limit reset; queue with AGM / Little Angels)  
-**COI-safe:** no mining/Tronox · no founder face/name on product
+**COI-safe:** no mining or industrial content · no founder face/name on product
 
 ## Legal fence (required)
 
